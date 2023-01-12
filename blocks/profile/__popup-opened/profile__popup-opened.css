@@ -1,0 +1,21 @@
+.profile__popup-opened{
+    align-self: center;
+    border: 1px solid #FFFFFF;
+    background-image: url(../../../images/pencil-vector.png);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 18px;
+    width: 24px;
+    height: 24px;
+}
+@media screen and (max-width: 650px){
+    .profile__popup-opened{
+       max-width: 320px;
+       width: 18px;
+       height: 18px;
+    }
+    }
+.profile__popup-opened:hover{
+    opacity: 0.6;
+}
