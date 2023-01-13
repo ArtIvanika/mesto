@@ -10,6 +10,11 @@
     overflow: hidden;
     max-width: 500px;
 }
+@media screen and (max-width: 900px){
+    .profile__text-subtitle {
+       max-width: 300px;
+    }
+    }
 @media screen and (max-width: 650px){
     .profile__text-subtitle {
        max-width: 240px;
