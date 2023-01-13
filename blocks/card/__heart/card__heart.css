@@ -6,6 +6,7 @@
     height: 19px;
     border: none;
     background-color: white;
+    cursor: pointer;
 }
 
 .card__heart:hover{
