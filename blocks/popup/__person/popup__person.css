@@ -1,7 +1,7 @@
 .popup__person{
     border: 0;
-    width: 358px;
-    height: 35px;
+    width: 100%;
+    min-height: 35px;
     box-sizing: border-box;
     border-bottom: 1px solid #bcbcc4;
     background-color: transparent;
@@ -9,11 +9,11 @@
     font-size: 14px;
     line-height: 17px;
     color: #000000;
+    margin-bottom: 0;
 }
       
 @media screen and (max-width: 650px){
     .popup__person {
-        width: 238px;
         font-size: 14px;
         line-height: 17px;
     }

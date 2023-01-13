@@ -4,6 +4,8 @@
     background-position: center;
     width: 22px;
     height: 19px;
+    border: none;
+    background-color: white;
 }
 
 .card__heart:hover{

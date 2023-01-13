@@ -9,8 +9,7 @@
 </head>
 <body class="page">
     <header class="header">
-        <img class="header__logo" src="images/logo.png" alt="Логотип Mesto Russia">
-        <hr class="header__line">
+        <img class="header__logo" src="images/logo-Vector.svg" alt="Логотип Mesto Russia">
     </header>
     <main>
         <section class="profile">
@@ -19,7 +18,7 @@
                 <div class="profile__text">
                     <div class="profile__text-first">
                       <h1 class="profile__text-title">Жак-Ив Кусто</h1>
-                      <button class="profile__popup-opened" type="button"></button>
+                      <button class="profile__edit-button" type="button"></button>
                     </div>
                     <p class="profile__text-subtitle">Исследователь океана</p>
                 </div>
@@ -28,64 +27,66 @@
         </section>
 
         <section class="card">
-            <div class="card__item">
+            <ul class="card__list">
+            <li class="card__item">
                 <img class="card__foto" src="images/karachaev.jpeg" alt="Фото Карачаевск">
                 <div class="card__text">
                    <h2 class="card__title">Карачаевск</h2>
-                   <div class="card__heart"></div>
+                   <button class="card__heart" type="button"></button>
                 </div>
-            </div>
-            <div class="card__item">
+            </li>
+            <li class="card__item">
                 <img class="card__foto" src="images/elbrus.jpeg" alt="Фото Горы Эльбрус">
                 <div class="card__text">
                    <h2 class="card__title">Гора Эльбрус</h2>
-                   <div class="card__heart"></div>
+                   <button class="card__heart" type="button"></button>
                 </div>
-            </div>
-            <div class="card__item">
+            </li>
+            <li class="card__item">
                 <img class="card__foto" src="images/dombay.jpeg" alt="Фото Домбая">
                 <div class="card__text">
                    <h2 class="card__title">Домбай</h2>
-                   <div class="card__heart"></div>
+                   <button class="card__heart" type="button"></button>
                 </div>
-            </div>
-            <div class="card__item">
+            </li>
+            <li class="card__item">
                 <img class="card__foto" src="images/severnoe-siyanie.jpeg" alt="Фото Северного Сияния">
                 <div class="card__text">
                    <h2 class="card__title">Северное Сияние</h2>
-                   <div class="card__heart"></div>
+                   <button class="card__heart" type="button"></button>
                 </div>
-            </div>
-            <div class="card__item">
+            </li>
+            <li class="card__item">
                 <img class="card__foto" src="images/kamchatka.jpeg" alt="Фото медведей на Камчатке">
                 <div class="card__text">
                    <h2 class="card__title">Камчатка</h2>
-                   <div class="card__heart"></div>
+                   <button class="card__heart" type="button"></button>
                 </div>
-            </div>
-            <div class="card__item">
+            </li>
+            <li class="card__item">
                 <img class="card__foto" src="images/baykal.jpeg" alt="Фото Озера Байкал">
                 <div class="card__text">
                    <h2 class="card__title">Озеро Байкал</h2>
-                   <div class="card__heart"></div>
+                   <button class="card__heart" type="button"></button>
                 </div>
-            </div>
+            </li>
+        </ul>
         </section>
     </main>
 
         <footer class="footer">
-            <h3 class="footer__author">© 2020 Mesto Russia</h3>
+            <p class="footer__author">© 2020 Mesto Russia</p>
         </footer>
 
         <section class="popup">
             <div class="popup__container">
               <h2 class="popup__name">Редактировать профиль</h2>
-              <form class="popup__input-container">
-                <input type="text" class="popup__person popup__person-name">
-                <input type="text" class="popup__person popup__person-who">
+              <form class="popup__input-container" name="form">
+                <input type="text" name="name" class="popup__person popup__person_input_name">
+                <input type="text" name="job" class="popup__person popup__person_input_job">
                 <button class="popup__save" type="submit" >Сохранить</button>
               </form>
-              <button class="popup__close" type="submit"></button>
+              <button class="popup__close" type="button"></button>
             </div>
         </section>
     

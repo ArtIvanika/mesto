@@ -11,8 +11,6 @@
 @media screen and (max-width: 650px){
     .card__title {
        max-width: 320px;
-       font-size: 24px;
-       line-height: 29px;
        text-align: center;
     }
     }
