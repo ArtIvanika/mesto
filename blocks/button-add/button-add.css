@@ -8,6 +8,7 @@
     background-size: 22px;
     width: 150px;
     height: 50px;
+    cursor: pointer;
 }
 .button-add:hover{
     opacity: 0.6;
