@@ -1,4 +1,4 @@
-.popup__person{
+.popup__info{
     border: 0;
     width: 100%;
     min-height: 35px;
@@ -13,7 +13,7 @@
 }
       
 @media screen and (max-width: 650px){
-    .popup__person {
+    .popup__info {
         font-size: 14px;
         line-height: 17px;
     }

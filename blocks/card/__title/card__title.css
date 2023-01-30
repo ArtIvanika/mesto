@@ -7,10 +7,10 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    max-width: 215px;
 }
 @media screen and (max-width: 650px){
     .card__title {
-       max-width: 320px;
        text-align: center;
     }
     }

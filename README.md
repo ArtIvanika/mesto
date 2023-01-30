@@ -24,6 +24,7 @@
 * Media - запросы
 * Позицианирование absolute
 * Overlay
+* Transition
 * JavaScript
 
 
