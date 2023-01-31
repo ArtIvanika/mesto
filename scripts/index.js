@@ -119,11 +119,13 @@ function createCard(item){
       const card = template.content.cloneNode(true);
       card.querySelector('.card__title').textContent = item.name;
       card.querySelector('.card__foto').setAttribute('src', item.link);
+      card.querySelector('.card__foto').setAttribute('alt', item.name);
 
       card.querySelector('.card__foto').addEventListener('click', function (){
 
         imageLink.src = item.link;
         imageSign.textContent = item.name; 
+
         togglePopup(popupImage)
       });
 
