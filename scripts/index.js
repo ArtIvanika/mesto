@@ -13,8 +13,8 @@ const popupCard = document.querySelector('.popup_type_card');
 const formCard = popupCard.querySelector('.popup__input-container_type_card');
 const popupCardOpenBtn = document.querySelector('.button-add');
 const popupCardCloseBtn = popupCard.querySelector('.popup__close');
-const nameCardInput = formCard.querySelector('.popup__info_input_name_type_card'); 
-const linkCardInput = formCard.querySelector('.popup__info_input_job_type_card');
+const nameCardInput = formCard.querySelector('.popup__info_input_card-name'); 
+const linkCardInput = formCard.querySelector('.popup__info_input_card-link');
 const cardLink = document.querySelector('.card__foto');
 const cardName = document.querySelector('.card__title');
 
