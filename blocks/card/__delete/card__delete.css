@@ -8,6 +8,7 @@
     border: none;
     top: 20px;
     right: 20px;
+    cursor: pointer;
 }
 
 .card__delete:hover{
