@@ -17,16 +17,20 @@
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__name/popup__name.css);
 @import url(../blocks/popup/__form/popup__form.css);
+@import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__info/popup__info.css);
 @import url(../blocks/popup/__save/popup__save.css);
+@import url(../blocks/popup/__save/_inactive/popup__save_inactive.css);
 @import url(../blocks/popup/__close/popup__close.css);
+@import url(../blocks/popup/__info-error/popup__info-error.css);
 
 @import url(../blocks/popup/_type_image/popup_type_image.css);
 @import url(../blocks/popup/__image-box/popup__image-box.css);
 @import url(../blocks/popup/__image-container/popup__image-container.css);
 @import url(../blocks/popup/__image-foto/popup__image-foto.css);
 @import url(../blocks/popup/__image-sign/popup__image-sign.css);
-
+@import url(../blocks/popup/__info/_type_active/popup__info_type_active.css);
+@import url(../blocks/popup/__info-error/_active/popup__info-error_active.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 
 @import url(../blocks/card/card.css);

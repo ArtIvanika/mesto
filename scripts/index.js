@@ -26,13 +26,22 @@ const template = document.querySelector('#card-template');
 const cardsContainer = document.querySelector('.card__list');
 const saveCardBtn = document.querySelector('.popup__save_type_card');
 
+  //функция закрытия popup по нажатию на клавишу Esc
+  function closeEscPopup(evt) {
+    if (evt.key === "Escape") {
+      const popup = document.querySelector('.popup_opened');
+      closePopup(popup);
+    };
+  }
 
 //Функция для открытия и закрытия попапов
 const openPopup = function (popup) {
     popup.classList.add('popup_opened')
+    document.addEventListener('keyup', closeEscPopup); // слушатель клика ESC
 }
 const closePopup = function (popup) {
     popup.classList.remove('popup_opened')
+    document.removeEventListener('keyup', closeEscPopup); // удалить событие keyup ESC
 }
 
 //Закрытие попапов по крестику
@@ -41,6 +50,18 @@ const buttonClosePopup = document.querySelectorAll('.popup__close');
     const popup = btn.closest('.popup');
     btn.addEventListener('click', () => closePopup(popup)); 
   }) 
+
+
+
+  //Закрытие попапа по внешней области
+const popupContainer = document.querySelectorAll('.popup');
+popupContainer.forEach(popup =>{
+  const closeAllPopup = popup.closest('.popup');
+  popup.addEventListener('click', function(event) {
+    if (event.target === event.currentTarget) {
+      closePopup(popup);
+}});
+});
 
 //Открытие попапа автора
 popupAuthorOpenBtn.addEventListener('click', function(){
@@ -122,7 +143,7 @@ function renderCards(initial){
 
 
   // Добовление карточки пользователем
-  saveCardBtn.addEventListener('click', (e) => {
+  formCard.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const card = createCard({name: nameCardInput.value, link: linkCardInput.value});
@@ -130,9 +151,5 @@ function renderCards(initial){
     cardsContainer.prepend(card);
     closePopup(popupCard);
   });
-
-
-
-
 
 
