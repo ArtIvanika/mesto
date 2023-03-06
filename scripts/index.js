@@ -1,5 +1,5 @@
-import {initialCards} from "./cards.js"
-import Card from "./Card.js";
+import {initialCards} from "./cards.js";
+import Card from "./Сard.js";
 import FormValidator from "./FormValidator.js";
 
 
@@ -14,7 +14,7 @@ const profileJob = document.querySelector(".profile__text-subtitle");
 
 // Переменные для popup card
 const popupCard = document.querySelector(".popup_type_card");
-const formCard = popupCard.querySelector(".popup__form_type_card");
+const formCard = document.forms["card-form"];
 const popupCardOpenBtn = document.querySelector(".button-add");
 const nameCardInput = formCard.querySelector(".popup__info_input_card-name");
 const linkCardInput = formCard.querySelector(".popup__info_input_card-link");
@@ -37,8 +37,25 @@ const config = {
   errorClass: "popup__info-error_active",
 };
 
-const editFormValidator = new FormValidator(config, popupAuthor);
-const addFormValidator = new FormValidator(config, popupCard);
+
+const formValidators = {}
+
+// Включение валидации
+const enableValidation = (config) => {
+  const formList = Array.from(document.querySelectorAll(config.formSelector))
+
+  formList.forEach((formElement) => {
+    const validator = new FormValidator(config, formElement)
+// получаем данные из атрибута `name` у формы
+    const formName = formElement.getAttribute('name')
+
+   // вот тут в объект записываем под именем формы
+    formValidators[formName] = validator;
+   validator.enableValidation();
+  });
+};
+
+enableValidation(config,);
 
 //функция закрытия popup по нажатию на клавишу Esc
 function closeEscPopup(evt) {
@@ -77,29 +94,26 @@ popupAuthorOpenBtn.addEventListener("click", function () {
 });
 
 //Сохранение данных автора
-function handleFormSubmit(evt) {
+function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
   closePopup(popupAuthor);
-  
+  formValidators[ 'profile-form' ].resetValidation()
+
 }
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
-formAuthor.addEventListener("submit", handleFormSubmit);
+formAuthor.addEventListener("submit", handleProfileFormSubmit);
 
 //Открытие попапа для фото
 popupCardOpenBtn.addEventListener("click", function () {
-  nameCardInput.value = "";
-  linkCardInput.value = "";
   openPopup(popupCard);
 });
 
 //Работа с карточками
-
-
-// //Открытие большой картинки
+//Открытие большой картинки
 function openPopupFoto(name, link) {
   imageLink.src = link;
   imageLink.alt = name;
@@ -131,11 +145,10 @@ formCard.addEventListener("submit", (e) => {
 
   cardsContainer.prepend(cardElement);
   closePopup(popupCard);
-  e.submitter.classList.add('popup__save_inactive');
-  e.submitter.disabled = true;
+ 
+  formCard.reset()  // очищаем форму
+
+  formValidators[ 'card-form' ].resetValidation()
 });
 
-
-editFormValidator.enableValidation();
-addFormValidator.enableValidation();
 

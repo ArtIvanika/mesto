@@ -2,10 +2,10 @@ export default class FormValidator {
   constructor(config, formElement) {
     this._config = config;
     // Находим все поля внутри формы, сделаем из них массив методом Array.from
-    this._inputSelector = Array.from(
+    this._inputList = Array.from(
       formElement.querySelectorAll(config.inputSelector)
     );
-    this._submitButtonSelector = formElement.querySelector(
+    this._submitButton = formElement.querySelector(
       config.submitButtonSelector
     );
     this._formElement = formElement;
@@ -49,7 +49,7 @@ export default class FormValidator {
 
   //проверка введённых данных в нужных полях
   _hasInvalidInput() {
-    return this._inputSelector.some((inputElement) => {
+    return this._inputList.some((inputElement) => {
       //вернём и переберём наш массив
       return !inputElement.validity.valid; //если поле будет не валидно обход массива прекратится
     });
@@ -59,23 +59,23 @@ export default class FormValidator {
     // Если есть хотя бы один невалидный инпут
     if (this._hasInvalidInput()) {
       // сделай кнопку неактивной
-      this._submitButtonSelector.classList.add(
+      this._submitButton.classList.add(
         this._config.inactiveButtonClass
       );
-      this._submitButtonSelector.setAttribute("disabled", "true");
+      this._submitButton.setAttribute("disabled", "true");
     } else {
       // иначе сделай кнопку активной
-      this._submitButtonSelector.classList.remove(
+      this._submitButton.classList.remove(
         this._config.inactiveButtonClass
       );
-      this._submitButtonSelector.removeAttribute("disabled");
+      this._submitButton.removeAttribute("disabled");
     }
   };
 
   resetValidation() {
     // Обойдём все элементы
     this._toggleButtonState();
-    this._inputSelector.forEach((inputElement) => {
+    this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement);
     });
   }
@@ -83,7 +83,7 @@ export default class FormValidator {
   // Вызовем функцию setEventListeners на каждый ввод символа
   _setEventListeners() {
     this._toggleButtonState();
-    this._inputSelector.forEach((inputElement) => {
+    this._inputList.forEach((inputElement) => {
       // каждому полю добавим обработчик события input
       inputElement.addEventListener("input", () => {
         this._checkInputValidity(inputElement);
