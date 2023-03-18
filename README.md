@@ -26,6 +26,7 @@
 * Overlay
 * Transition
 * JavaScript
+* Классы
 
 
 

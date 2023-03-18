@@ -1,8 +1,8 @@
 import Popup from "./Popup.js";
 
 export default class PopupWithForm extends Popup {
-  constructor(popupSelector, handleFormSubmit) {
-    super(popupSelector);
+  constructor(popupElement, handleFormSubmit) {
+    super(popupElement);
     this._handleFormSubmit = handleFormSubmit;
 
     this._form = this._popup.querySelector(".popup__form"); //находим форму
@@ -10,7 +10,8 @@ export default class PopupWithForm extends Popup {
     this._button = this._form.querySelector(".popup__save"); //находим кномку сохранения попапа
   }
 
-  _getInputValues() {  //собирает данные всех полей формы.
+  _getInputValues() {
+    //собирает данные всех полей формы.
 
     this._formValues = {}; // создаём пустой объект
 
