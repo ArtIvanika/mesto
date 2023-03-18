@@ -1,27 +1,36 @@
+const arkhyzImage = new URL('../images/arkhyz.jpeg', import.meta.url);
+const chelyabinskOblastImage = new URL('../images/chelyabinsk-oblast.jpeg', import.meta.url);
+const severnoeSiyanieImage = new URL('../images/severnoe-siyanie.jpeg', import.meta.url);
+const kamchatkaBearsImage = new URL('../images/kamchatka-bears.jpeg', import.meta.url);
+const elbrusImage = new URL('../images/elbrus.jpeg', import.meta.url);
+const baykalImage = new URL('../images/baykal.jpeg', import.meta.url);
+
+
+
 export const initialCards = [
   {
     name: "Архыз",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
+    link: arkhyzImage  
   },
   {
     name: "Челябинская область",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
+    link: chelyabinskOblastImage
   },
   {
-    name: "Иваново",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
+    name: "Северное сияние",
+    link: severnoeSiyanieImage
   },
   {
     name: "Камчатка",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
+    link: kamchatkaBearsImage
   },
   {
-    name: "Холмогорский район",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
+    name: "Эльбрус",
+    link: elbrusImage
   },
   {
     name: "Байкал",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
+    link: baykalImage
   },
 ];
 
