@@ -8,26 +8,12 @@ export const nameInput = formAuthor.querySelector(".popup__info_input_name");
 export const jobInput = formAuthor.querySelector(".popup__info_input_job");
 export const profileName = document.querySelector(".profile__text-title");
 export const profileJob = document.querySelector(".profile__text-subtitle");
-// export const popupAvatar = document.querySelector('.popup_type_ava')
 export const popupAvatarOpenBtn = document.querySelector('.profile__foto-btn')
 export const profileAvatar = document.querySelector('.profile__foto')
 
 // Переменные для popup card
-//export const popupCard = document.querySelector(".popup_type_card");
 export const formCard = document.forms["card-form"];
 export const popupCardOpenBtn = document.querySelector(".button-add");
-//export const nameCardInput = formCard.querySelector(
-//  ".popup__info_input_card-name"
-//);
-//export const linkCardInput = formCard.querySelector(
-  //".popup__info_input_card-link"
-//);
-
-// Переменные для попапа с картинкой
-//export const popupImage = document.querySelector(".popup_type_image");
-
-//Переменные для темпла
-//export const cardsContainer = document.querySelector(".card__list");
 
 export const config = {
   formSelector: ".popup__form",

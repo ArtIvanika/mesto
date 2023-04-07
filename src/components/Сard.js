@@ -8,7 +8,6 @@ export default class Card {
       handleDeleteLikeCard,
       handleDeleteCard,
     },
-    // openPopupFoto,
     templateSelector
   ) {
     this._data = data;
