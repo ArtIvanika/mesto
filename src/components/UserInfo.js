@@ -1,7 +1,8 @@
 export default class UserInfo{
-    constructor({name, info}){
+    constructor({name, about, avatar}){
         this._name = name;
-        this._info = info
+        this._about = about;
+        this._avatar = avatar
     }
 
     //возвращает объект с данными пользователя. 
@@ -9,14 +10,24 @@ export default class UserInfo{
    getUserInfo(){
     this._userInfo = {};
     this._userInfo.name = this._name.textContent;
-    this._userInfo.info = this._info.textContent;
+    this._userInfo.about = this._about.textContent;
+    this._userInfo.avatar = this._avatar.src
 
     return this._userInfo
    }
 
    // принимает новые данные пользователя и добавляет их на страницу.
-   setUserInfo({nameInput, infoInput}){
-    this._name.textContent = nameInput;
-    this._info.textContent = infoInput
+   setUserInfo({ name, about }){
+    this._name.textContent = name;
+    this._about.textContent = about;
    }
+
+   // вставляем значения для аватара
+   setAvatarInfo({ avatar }) {
+    this._avatar.src = avatar;
+  }
+
+//   getUserId = () => {
+//     return this._userId
+//   }
 }

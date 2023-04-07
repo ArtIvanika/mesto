@@ -1,7 +1,6 @@
 .popup__name{
     margin-top: 34px;
     margin-bottom: 35px;
-    margin-left: 36px;
     font-weight: 900;
     font-size: 24px;
     line-height: 29px;
@@ -13,6 +12,5 @@
         line-height: 22px;
         margin-top: 25px;
         margin-bottom: 30px;
-        margin-left: 22px;
     }
 }
